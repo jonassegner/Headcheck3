@@ -1,38 +1,41 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+//using System.Collections.Generic;
+//using System.ComponentModel;
+//using System.Data;
+//using System.Drawing;
+//using System.Linq;
+//using System.Text;
+//using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Headcheck
 {
-    public partial class Form1 : Form
+    public partial class HeadCheck : Form
     {
-        public Form1()
+        public HeadCheck()
         {
             InitializeComponent();
-            
+            Console.WriteLine("Headcheck initialized");
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
+            //Hier leer lassen um Windows standard 
+            //Dialog nicht zu überschreiben
         }
 
         public void myButton_Click(object sender, EventArgs e)
         {
             Button myButton = sender as Button;
-            myButton.Text = "clicked";
+            myButton.Text = "geklickt";
+            Console.WriteLine("Button clicked");
         }
 
         public void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
             CheckBox myCheckBox = sender as CheckBox;
             myCheckBox.Text = "funktioniert";
+            Console.WriteLine("Checkbox checked");
         }
 
         public void control_of_UI(int zx, int zy, EventArgs e)
@@ -40,6 +43,7 @@ namespace Headcheck
             //verändern wenn zx ungleich 0
             if (zx != 0)
             {
+                Console.WriteLine("control of GUI started");
                 //auswählen mit zy s.u.
                 switch (zy)
                 {
@@ -80,14 +84,16 @@ namespace Headcheck
         private void button1_Click(object sender, EventArgs e)
         {
             Button button1 = sender as Button;
-            button1.Text = "started";
+            button1.Text = "gestartet";
             control_of_UI(1, 3, e);
+            Console.WriteLine("Startbutton clicked");
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             Button button2 = sender as Button;
-            button2.Text = "stopped";
+            button2.Text = "gestopt";
+            Console.WriteLine("Stopbutton clicked");
         }
     }
 }
